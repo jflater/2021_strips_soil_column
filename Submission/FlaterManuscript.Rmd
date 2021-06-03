@@ -1,0 +1,75 @@
+## Abstract
+
+-   Threat of antibiotic resistance
+-   Multiple benefits of prairie strips
+-   Unknown how strips impact ARGs and manure associated bacteria in runoff
+-   Unknown what the difference in abundances of ARGs are between bulk and rhizosphere soils following exposure to nutrient runoff
+-   We evaluated ARG presence in soil at 7.5 cm increments from 0 - 65 cm and leachate from soil profiles of two lengths
+-   We further characterized soil ARGs and bacteria by separating soil into bulk and rhizosphere components
+
+## Introduction
+
+-   
+
+## Results
+
+-   ASVs
+
+    -   The mean number of ASVs (richness) was greater in \_\_\_ soil than \_\_\_ soil
+    -   Community structure varies by \_\_\_
+    -   The difference in community stucture between bulk and rhizosphere praire soils is characterized by \_\_\_
+    -   
+
+-   ARGs
+
+## Conclusion
+
+## Materials and Methods
+
+-   Field site
+
+    -   Prairie strips installed in 20XX
+
+    -   Soil is \_\_\_
+
+    -   Mean annual pecip.
+
+    -   Column sample locations
+
+    -   Column collection
+
+        -   Three blocks
+
+        -   baseline soil health
+
+            -   Composite of 10 cores taken between two adjacent column sample locations (0 - 6")
+
+        -   baseline DNA
+
+            -   One core taken adjacent to each soil column, (0 - XX cm (full probe))
+
+-   Column design
+
+    -   6 " diameter PVC cut to 35 or 65 cm long
+
+    -   Bevel cut along bottom edge and two cotter pin holes drilled opposite of each other \~ inches from top of column
+
+    -   PVC cap with hole and steel screen, filled with sand used to cap bottom of column
+
+-   Laboratory setup
+
+-   Simulated rainfalls
+
+-   Simulated nutrient runoff
+
+-   Leachate collection
+
+-   Soil collection
+
+    -   
+
+    -   Separation of bulk vs. rhizosphere
+
+## Acknowledgments
+
+## Figures
