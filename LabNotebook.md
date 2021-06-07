@@ -6,7 +6,8 @@ For the first watering, we applied 1.5 L to 35 cm columns and 3 L to 65 cm colum
 
 ## 20210607
 
-	Rainfall number 2 on block 1. Water much clearer
+Rainfall number 2 on block 1. Water much clearer
+
 * We applied 1 L of DI water to each column
 * We collected ~ 750 mL of water from each column
 
