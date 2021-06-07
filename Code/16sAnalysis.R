@@ -11,3 +11,7 @@ ASVs <- read.csv("Data/MothurASVs.csv")
 taxonomy <- read.csv("Data/MothurTaxa.csv")
   
 metadata <- read_excel("Data/MetaData.xlsx")
+
+Fig1 <- ggplot()
+
+ggsave(Fig1, Figures/Figure1.png)

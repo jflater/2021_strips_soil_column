@@ -73,3 +73,5 @@
 ## Acknowledgments
 
 ## Figures
+Figure 1
+![](Figures/Figure1.png)
