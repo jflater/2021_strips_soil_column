@@ -15,7 +15,7 @@ dat <- read_exif(files) %>%
                SourceFile, DateTimeOriginal,
                GPSLongitude, GPSLatitude)
 
-write.csv(dat, 'Exifdata.csv',
+write.csv(dat, '../Data/GPSExifdata.csv',
           row.names = F)
 
 ggplot(dat, aes(x = GPSLongitude, y = GPSLatitude, label = SourceFile)) +
