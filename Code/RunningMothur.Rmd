@@ -1,0 +1,19 @@
+---
+title: "Introduction to Mothur"
+output: html_notebook
+---
+
+# Mothur
+
+`Schloss, P.D., et al., Introducing mothur: Open-source, platform-independent,`
+`community-supported software for describing and comparing microbial communities.`
+`Appl Environ Microbiol, 2009. 75(23):7537-41.`
+
+To run mothur, download from https://github.com/mothur/mothur/releases
+
+If you keep it in your downloads folder, you can run it with the following command (in the terminal): 
+
+```{bash eval=FALSE, include=T}
+~/downloads/mothur/mothur
+```
+
