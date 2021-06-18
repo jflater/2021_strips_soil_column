@@ -13,11 +13,13 @@
 
 ## Results
 
+-   Soil health and characteristics of field site
+
 -   ASVs
 
     -   The mean number of ASVs (richness) was greater in \_\_\_ soil than \_\_\_ soil
     -   Community structure varies by \_\_\_
-    -   The difference in community stucture between bulk and rhizosphere praire soils is characterized by \_\_\_
+    -   The difference in community structure between bulk and rhizosphere prairie soils is characterized by \_\_\_
     -   
 
 -   ARGs
@@ -32,7 +34,7 @@
 
     -   Soil is \_\_\_
 
-    -   Mean annual pecip.
+    -   Mean annual precipitation
 
     -   Column sample locations
 
@@ -73,5 +75,5 @@
 ## Acknowledgments
 
 ## Figures
-Figure 1
-![](Figures/Figure1.png)
+
+Figure 1 ![](Figures/Figure1.png)
