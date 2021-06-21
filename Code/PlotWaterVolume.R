@@ -8,14 +8,16 @@ setwd("~/Desktop/Flater_soilColumnAnalysis/Code/")
 
 SecondWater <- read_excel("~/Desktop/Flater_soilColumnAnalysis/Data/LeachateData.xlsx", 
                            sheet = "Rainfall 2") %>%
-  select(column, as.factor(rainfall), rain_date, `water_mass(g)`)
+  select(column, rainfall,  rain_date, `water_mass(g)`)
  
 ThirdWater <- read_excel("~/Desktop/Flater_soilColumnAnalysis/Data/LeachateData.xlsx",
                          sheet = "Rainfall 3") %>%
-  select(column, as.factor(rainfall), rain_date, `water_mass(g)`) 
+  select(column, rainfall, rain_date, `water_mass(g)`) 
 
 waterdf <- bind_rows(SecondWater, ThirdWater) %>%
-  filter(rain_date %in% c(20210609, 20210611, 20210616, 202106018)) 
+  filter(rain_date %in% c(20210609, 20210611, 20210616, 20210618)) 
+
+
 
 WaterPlot <- ggplot(waterdf, aes(x = rainfall, y = `water_mass(g)`, color = column)) +
     geom_line() + 
@@ -24,7 +26,7 @@ WaterPlot <- ggplot(waterdf, aes(x = rainfall, y = `water_mass(g)`, color = colu
 # Filter the last values and add onto the line plot
 data_ends <- waterdf %>% filter(rainfall == 3)
 WaterPlot + 
-  geom_text_repel(
+  geom_label_repel(
     aes(label = column), data = data_ends,
     fontface ="plain", color = "black", size = 3
   ) +
