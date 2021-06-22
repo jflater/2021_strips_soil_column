@@ -14,24 +14,31 @@ ThirdWater <- read_excel("~/Desktop/Flater_soilColumnAnalysis/Data/LeachateData.
                          sheet = "Rainfall 3") %>%
   select(column, rainfall, rain_date, `water_mass(g)`) 
 
-waterdf <- bind_rows(SecondWater, ThirdWater) %>%
-  filter(rain_date %in% c(20210609, 20210611, 20210616, 20210618)) 
+FourthWater <- read_excel("~/Desktop/Flater_soilColumnAnalysis/Data/LeachateData.xlsx",
+                          sheet = "Rainfall 4") %>%
+  select(column, rainfall, rain_date, `water_mass(g)`) 
+  
+waterdf <- bind_rows(SecondWater, ThirdWater, FourthWater) 
 
+test <- waterdf %>%
+  group_by(column) %>%
+  mutate(lead0 = `water_mass(g)`, 
+         lead1 = lead(`water_mass(g)`, n = 1, order_by = rainfall),
+         slope = lead0 - lead1)
 
-
-WaterPlot <- ggplot(waterdf, aes(x = rainfall, y = `water_mass(g)`, color = column)) +
-    geom_line() + 
+WaterPlot <- ggplot(test, aes(x = rainfall, y = `water_mass(g)`, group = column)) +
+    geom_line(aes(color = slope < 0)) + 
     geom_point()
 
+WaterPlot
 # Filter the last values and add onto the line plot
-data_ends <- waterdf %>% filter(rainfall == 3)
+data_ends <- waterdf %>% filter(rainfall == 4)
 WaterPlot + 
   geom_label_repel(
     aes(label = column), data = data_ends,
     fontface ="plain", color = "black", size = 3
   ) +
   theme_economist() +
-  theme(legend.position = "none") + 
   labs(x = "Rainfall", y = "Mass of water in grams") +
   ggtitle("Monitoring leachate volume in soil columns", subtitle = "1,000 mL applied at each rainfall") 
   
