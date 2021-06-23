@@ -1,3 +1,8 @@
+---
+title: "ARGs in leachate and soil from strips soil columns"
+bibliography: references.bib
+---
+
 ## Abstract
 
 -   Threat of antibiotic resistance
@@ -9,7 +14,13 @@
 
 ## Introduction
 
--   
+*Important to characterize background ARGs in soil*
+
+Antibiotics and antibiotic resistance genes have been detected in organisms and environments regardless of human influence @allen2010. The natural presence of ARGs in soils presents a challenge when evaluating the impact of human activity on ARG abundance. Further, several classes of ARGs are found in native soils as well as in soils associated with agricultural activity @cadena2018.
+
+Evidence suggests that ARGs may be transported through the environment via surface and groundwater movement. For example, manure associated ARGs have been detected up to ?? meters into the soil profile following manure application *CITE*. Further, when rainfall was simulated on plot scale manured soils, significant concentrations of ARGs were detected in the runoff. Supporting the movement of ARGs in water is the observation of little to no ARG accumulation in the soil following manure application *CITE Strips*.
+
+Conservation practices, such as buffers of perennial vegetation, have shown potential to reduce the concentration of ARGs in surface runoff. Yet, little is known of the fate of ARGs introduced to the soil profile of vegetative strips by infiltrating runoff from manured fields.
 
 ## Results
 
@@ -76,4 +87,8 @@
 
 ## Figures
 
-Figure 1 ![](Figures/Figure1.png)
+### Change in leachate volume over time
+
+Figure 1 ![](../Figures/LeachateVolume.png)
+
+## References
