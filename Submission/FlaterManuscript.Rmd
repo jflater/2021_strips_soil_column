@@ -1,3 +1,8 @@
+---
+title: "ARGs in leachate and soil from strips soil columns"
+bibliography: references.bib
+---
+
 ## Abstract
 
 -   Threat of antibiotic resistance
@@ -9,10 +14,22 @@
 
 ## Introduction
 
--   
+*Important to characterize background ARGs in soil*
+
+Antibiotics used to treat bacterial infections in humans and livestock prevent ## deaths, however, efficacy of antibiotic treatment is reduced in the presence of antibiotic resistant pathogens. There are currently several approaches being examined to reduce the impact of human activity on environmental ARG presence and abundance. Animal agriculture has been identified as a source and reservoir of antibiotic resistant pathogens, including significant concentrations of ARGs in animal manure. The presence and potential transport of ARGs from manure to surface and groundwater following manure application, reduces the value of animal manures as fertilizers. One approach to reducing ARGs in the environment is to intercept ARGs in water before they are transported to surface or groundwater. Strips of vegetation have been shown to reduce the abundance of ARGs in runoff following simulated rainfall. However, a significant portion of the water cycle is made of infiltrating water and little is known of the impact of vegetative strips on the transport and abundance of ARGs in infiltrating water. 
+
+Antibiotics and antibiotic resistance genes have been detected in organisms and environments regardless of human influence @allen2010. The natural presence of ARGs in soils presents a challenge when evaluating the impact of human activity on ARG abundance. Further, several classes of ARGs are found in native soils as well as in soils associated with agricultural activity @cadena2018.
+
+Evidence suggests that ARGs may be transported through the environment via surface and groundwater movement. For example, manure associated ARGs have been detected up to ?? meters into the soil profile following manure application *CITE*. Further, when rainfall was simulated on plot scale manured soils, significant concentrations of ARGs were detected in the runoff. Supporting the movement of ARGs in water is the observation of little to no ARG accumulation in the soil following manure application *CITE Strips*.
+
+Conservation practices, such as buffers of perennial vegetation, have shown potential to reduce the concentration of ARGs in surface runoff. Yet, little is known of the fate of ARGs introduced to the soil profile of vegetative strips by infiltrating runoff from manured fields.
 
 ## Results
+-   In the weekly runoff simulations, 1 L of water, averaged 750 mL of water collected as leachate (Fig 1). 
 
+Figure 1 ![](../Figures/LeachateVolume.png)
+
+-   We observed differences in infiltration rate between columns, with several columns showing ponding of water before draining. In addition, several columns began dripping leachate within 10 to 15 minutes. Average time to apply 1 L of DI water was 20 minutes and leachate was collected until > 30 seconds between drips. 
 -   Soil health and characteristics of field site
 
 -   ASVs
@@ -74,6 +91,7 @@
 
 ## Acknowledgments
 
-## Figures
 
-Figure 1 ![](Figures/Figure1.png)
+
+
+## References
