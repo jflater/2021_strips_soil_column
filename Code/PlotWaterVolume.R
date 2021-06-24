@@ -19,14 +19,18 @@ FourthWater <- read_excel("../Data/LeachateData.xlsx",
 waterdf <- bind_rows(SecondWater, ThirdWater, FourthWater) 
 
 changeinvolume <- waterdf %>%
+  filter(rainfall %in% c(2,3,4)) %>%
   group_by(column) %>%
   mutate(lead0 = `water_mass(g)`, 
          lead1 = lead(`water_mass(g)`, n = 1, order_by = rainfall),
-         slope = lead0 - lead1)
+         slope = lead0 - lead1, 
+         rainfall = as.numeric(rainfall), 
+         increasing = ifelse(slope < 0, TRUE, FALSE))
 
-WaterPlot <- ggplot(changeinvolume, aes(x = rainfall, y = `water_mass(g)`, group = column)) +
-    geom_line(aes(color = slope < 0)) + 
-    geom_point()
+WaterPlot <- changeinvolume %>%
+  ggplot(aes(x = rainfall, y = `water_mass(g)`, group = column)) +
+    geom_line(aes(color = increasing), size = 2, alpha = .5) + 
+    geom_point(size = 2) 
 
 WaterPlot
 # Filter the last values and add onto the line plot
@@ -37,10 +41,11 @@ WaterPlot +
     aes(label = column), data = data_ends,
     fontface ="plain", color = "black", size = 3
   ) +
+  scale_x_continuous(breaks = seq(from = 2, to = 4, by = 1)) +
   theme_economist() +
   theme(legend.position = "none") +
   labs(x = "Rainfall", y = "Mass of water in grams", caption = "Labels indicate column in which leachate was collected from") +
   ggtitle("Monitoring leachate volume in soil columns", subtitle = "1,000 mL applied at each rainfall") 
   
-ggsave("../Figures/LeachateVolume.png", plot = last_plot(), device = "png", width = 8, height = 6, units = "in")
+ggsave("../Figures/LeachateVolume.png", plot = last_plot(), device = "png", width = 8, height = 8, units = "in")
 
