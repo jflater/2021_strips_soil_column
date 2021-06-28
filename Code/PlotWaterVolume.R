@@ -4,48 +4,41 @@ library(readxl)
 library(ggrepel)
 library(ggthemes)
 
-SecondWater <- read_excel("../Data/LeachateData.xlsx", 
-                           sheet = "Rainfall 2") %>%
-  select(column, rainfall,  rain_date, `water_mass(g)`)
- 
-ThirdWater <- read_excel("../Data/LeachateData.xlsx",
-                         sheet = "Rainfall 3") %>%
-  select(column, rainfall, rain_date, `water_mass(g)`) 
+# Read in all sheets 
+SimulatedRainfallsList <- excel_sheets("../Data/LeachateData.xlsx")
+SimulatedRainfalls <- lapply(SimulatedRainfallsList, function(x) read_excel(path = "../Data/LeachateData.xlsx", sheet = x, na = c("NA")))
+SimulatedRainfallsDF <- bind_rows(SimulatedRainfalls)
 
-FourthWater <- read_excel("../Data/LeachateData.xlsx",
-                          sheet = "Rainfall 4") %>%
-  select(column, rainfall, rain_date, `water_mass(g)`) 
-  
-waterdf <- bind_rows(SecondWater, ThirdWater, FourthWater) 
-
-changeinvolume <- waterdf %>%
-  filter(rainfall %in% c(2,3,4)) %>%
+# Make a data frame with a column indicating if slope is increasing or decreasing
+changeinvolume <- SimulatedRainfallsDF %>%
+  filter(rainfall != 1) %>% # No volume data for initial rainfall
   group_by(column) %>%
-  mutate(lead0 = `water_mass(g)`, 
-         lead1 = lead(`water_mass(g)`, n = 1, order_by = rainfall),
-         slope = lead0 - lead1, 
+  mutate(lead0 = `water_mass(g)`, # column of interest (change in mass)
+         lead1 = lead(`water_mass(g)`, n = 1, order_by = rainfall), # use lead to get the next water mass
+         slope = lead0 - lead1, # slope calculation
          rainfall = as.numeric(rainfall), 
-         increasing = ifelse(slope < 0, TRUE, FALSE))
+         increasing = ifelse(slope < 0, TRUE, FALSE)) # column to color geom line by if slope is increasing or decreasing
 
+# subset to last rainfall for labeling points
+data_ends <- changeinvolume %>%
+  filter(rainfall == max(rainfall))
+
+# Plot
 WaterPlot <- changeinvolume %>%
   ggplot(aes(x = rainfall, y = `water_mass(g)`, group = column)) +
-    geom_line(aes(color = increasing), size = 2, alpha = .5) + 
-    geom_point(size = 2) 
-
-WaterPlot
-# Filter the last values and add onto the line plot
-data_ends <- changeinvolume %>% filter(rainfall == max(rainfall))
-
-WaterPlot + 
-  geom_label_repel(
-    aes(label = column), data = data_ends,
-    fontface ="plain", color = "black", size = 3
-  ) +
+  geom_line(aes(color = increasing), size = 2, alpha = .5) + 
+  geom_point(size = 2) + 
+  geom_label_repel(aes(label = column), data = data_ends, fontface ="plain", color = "black", size = 3) +
   scale_x_continuous(breaks = seq(from = 2, to = 4, by = 1)) +
   theme_economist() +
   theme(legend.position = "none") +
-  labs(x = "Rainfall", y = "Mass of water in grams", caption = "Labels indicate column in which leachate was collected from") +
-  ggtitle("Monitoring leachate volume in soil columns", subtitle = "1,000 mL applied at each rainfall") 
-  
+  labs(x = "Rainfall", 
+       y = "Mass of water in grams", 
+       caption = "Labels indicate column in which leachate was collected from") +
+  ggtitle("Monitoring leachate volume in soil columns", 
+          subtitle = "1,000 mL applied at each rainfall") 
+
+WaterPlot
+
 ggsave("../Figures/LeachateVolume.png", plot = last_plot(), device = "png", width = 8, height = 8, units = "in")
 

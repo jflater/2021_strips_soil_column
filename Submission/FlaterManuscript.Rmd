@@ -24,6 +24,8 @@ Evidence suggests that ARGs may be transported through the environment via surfa
 
 Conservation practices, such as buffers of perennial vegetation, have shown potential to reduce the concentration of ARGs in surface runoff. Yet, little is known of the fate of ARGs introduced to the soil profile of vegetative strips by infiltrating runoff from manured fields.
 
+The concentration of indiginous soil ARGs can range from *BLANK* to *BLANK* copies per gram of soil. In animal manures, from barns utilizing antibioitics, the concentation of ARGs in swine manure ranges from *BLANK* to *BLANK* copies per mL of liquid manure
+
 ## Results
 -   In the weekly runoff simulations, 1 L of water, averaged 750 mL of water collected as leachate (Fig 1). 
 
