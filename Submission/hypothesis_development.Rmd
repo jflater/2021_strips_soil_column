@@ -35,4 +35,13 @@ AD swine manure runoff induces smaller shifts in 16S and ARGs in soil when compa
 
 With greater soil depth, there is less dissimilarity between bulk and rhizo 16S and ARG communities
 
+# Questions to answer
+
+1.  What is the absolute number of ARGs in M and ADM?
+2.  Relative abundance of ARGs in runoff water and leachate?
+3.  Resistome in baseline soils?
+4.  How do numbers of ARGs change in leachate compared to runoff? How do ARGs change in soil following nutrient runoff?
+5.  What is the difference in ARG response between rhizosphere and bulk soil?
+6.  Is the response different based on treatment?
+
 # Bibliography
