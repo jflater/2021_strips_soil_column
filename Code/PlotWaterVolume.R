@@ -29,7 +29,8 @@ WaterPlot <- changeinvolume %>%
   geom_line(aes(color = increasing), size = 2, alpha = .5) + 
   geom_point(size = 2) + 
   geom_label_repel(aes(label = column), data = data_ends, fontface ="plain", color = "black", size = 3) +
-  scale_x_continuous(breaks = seq(from = 2, to = 4, by = 1)) +
+  scale_x_continuous(breaks = seq(from = 2, to = max(changeinvolume$rainfall), by = 1)) +
+  facet_grid(rows = "column_length") +
   theme_economist() +
   theme(legend.position = "none") +
   labs(x = "Rainfall", 
