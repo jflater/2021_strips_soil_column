@@ -1,0 +1,47 @@
+---
+title: Strips Soil Columns
+output:
+  html_document:
+    toc: true
+    toc_float: true
+bibliography: references.bib
+---
+
+# Hypothesis development
+
+For Jared's first paper, there are three hypotheses:
+
+![](images/Hypothosisbrainstormfigure.jpg){width="317"}
+
+## H1
+
+The composition of taxa (16S) and ARGs is different between bulk and rhizosphere soil following fertilizer applications.
+
+1.  Manure vs. fertilizer impact on SSU/ARGs
+
+2.  Bulk vs. rhizosphere impact on SSU/ARGs
+
+### Rationale
+
+First, there is strong evidence for different bacterial community compositions between bulk and rhizosphere soils [@kuzyakov2015]. In prairies, similar differences between bulk and rhizosphere soils has been observed, however, it must be noted that restored prairies can take decades before soil microbiomes are "mature" [@allison2005].
+
+In comparison to the the bacterial microbiome, the antibiotic resistance gene profile is under characterized. An accurate characterization of the soil ARG profile is needed to evaluate changes caused by manure addition.
+
+## H2
+
+AD swine manure runoff induces smaller shifts in 16S and ARGs in soil when compared to M runoff, but both AD and M elicit greater responses than mineral runoff
+
+## H3
+
+With greater soil depth, there is less dissimilarity between bulk and rhizo 16S and ARG communities
+
+# Questions to answer
+
+1.  What is the absolute number of ARGs in M and ADM?
+2.  Relative abundance of ARGs in runoff water and leachate?
+3.  Resistome in baseline soils?
+4.  How do numbers of ARGs change in leachate compared to runoff? How do ARGs change in soil following nutrient runoff?
+5.  What is the difference in ARG response between rhizosphere and bulk soil?
+6.  Is the response different based on treatment?
+
+# Bibliography
