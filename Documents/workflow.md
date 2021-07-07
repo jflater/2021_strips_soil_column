@@ -1,3 +1,8 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
 ## Recommended collaboration workflow for Git
 
 Generally, you want to only update the main/master branch via pull requests from branches that have been merged with master beforehand. This is so that

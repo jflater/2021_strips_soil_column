@@ -1,0 +1,225 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+
+\hypertarget{recommended-collaboration-workflow-for-git}{%
+\subsection{Recommended collaboration workflow for
+Git}\label{recommended-collaboration-workflow-for-git}}
+
+Generally, you want to only update the main/master branch via pull
+requests from branches that have been merged with master beforehand.
+This is so that
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Main/master branch is always in a state that ``works''
+\item
+  Any potential merge conflicts with main have been addressed in the
+  branches before the branch is incorporated into main, making sure that
+  adding new changes to the main branch won't break it.
+\end{enumerate}
+
+\hypertarget{workflow-example}{%
+\subsubsection{Workflow example}\label{workflow-example}}
+
+Let's say you're working on your own. You have the \texttt{main} branch
+that has the current working site. An example workflow would be:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{git\ checkout\ main} followed by \texttt{git\ pull} to make
+  sure you have the most up-to-date version of \texttt{main}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Ideally, there should be no merge conflicts or problems here because
+    you've been following this workflow :)
+  \end{itemize}
+\item
+  \texttt{git\ checkout\ -b\ your-new-branch} to create a new branch
+  named \texttt{your-new-branch} and switch to it, followed by
+  \texttt{git\ push\ -u\ origin\ your-new-branch} to tell the remote
+  repo about your branch.
+\item
+  Make all your changes on the \texttt{your-new-branch} branch:
+  \texttt{git\ add} and \texttt{commit} as you normally would. When
+  you're ready to move all the changes to \texttt{main}, do a
+  \texttt{git\ push} to update the remote
+  \texttt{origin/your-new-branch}.
+\item
+  \texttt{git\ checkout\ main} followed by \texttt{git\ pull} to update
+  \texttt{main} again.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    If you're working on your own, there probably won't be many changes,
+    but if you have collaborators, this is necessary to make sure you
+    know about changes made by other people.
+  \end{itemize}
+\item
+  \texttt{git\ checkout\ your-new-branch} to switch to the new branch
+  you made
+\item
+  \texttt{git\ merge\ main} to add all the changes from \texttt{main}
+  into \texttt{your-new-branch}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    If there are no merge conflicts, awesome!
+  \item
+    If there are, you'll have to reconcile the merges. You can either
+    fix the merges in \texttt{vim}/your favorite IDE, or you can do use
+    the \texttt{theirs/ours} merging strategies to accept all the
+    changes from the \texttt{main}/\texttt{your-new-branch} branches,
+    respectively. There are two ways you can do this:
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Abort the merge via \texttt{git\ merge\ -\/-abort} to cancel the
+      merge attempt, then re-do the merge with
+      \texttt{git\ merge\ -s\ ours/theirs\ master} to take all the
+      changes from \texttt{your-new-branch}/\texttt{main} respectively.
+    \item
+      If you're already in a conflicted state and you want to use one of
+      the strategies, you can use
+      \texttt{git\ checkout\ -\/-theirs/-\/-ours\ .} to take all the
+      changes from \texttt{your-new-branch}/\texttt{main} respectively,
+      followed by \texttt{git\ add\ .} and \texttt{git\ commit}.
+
+      \begin{itemize}
+      \tightlist
+      \item
+        More info:
+        \url{https://stackoverflow.com/questions/10697463/resolve-git-merge-conflicts-in-favor-of-their-changes-during-a-pull/33569970\#33569970}
+      \end{itemize}
+    \end{itemize}
+  \item
+    After handling the merge, \texttt{git\ push} again to update
+    \texttt{origin/your-new-branch}.
+  \end{itemize}
+
+  At this point you have successfully incorporated all the changes in
+  \texttt{main} into \texttt{your-new-branch} and resolved any
+  conflicts. Incorporating all the changes from \texttt{your-new-branch}
+  into \texttt{main} should be painless now (assuming no one has made
+  any changes between the last step and here).
+\item
+  To incorporate the changes from \texttt{your-new-branch} into main,
+  there are two main options:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    To just merge all the changes without review, do
+    \texttt{git\ checkout\ main} to checkout the main branch followed by
+    \texttt{git\ merge\ your-new-branch}. This should just be a
+    \texttt{fast-forward} merge since you handled all the conflicts in
+    step 6. Now do \texttt{git\ push} to update \texttt{origin/main}.
+    You're all done!
+  \item
+    If you want someone else to review the changes before merging the
+    two branches together, you can open a pull request on the Github
+    website:
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Go to the repo website and click on ``Pull Requests''. Click on
+      ``New Pull Request''.
+    \item
+      The base branch should be \texttt{main/master} and the
+      \texttt{compare} branch should be \texttt{your-new-branch}. Write
+      something about what the pull request does and submit the pull
+      request.
+    \item
+      Theoretically, you should see some checks underneath that say
+      something like ``This branch has no conflicts with the base
+      branch'' (since we handled all the conflicts in step 6) and you
+      should see the beautiful green ``Merge pull request button''. Then
+      whoever you want to review the changes will be able to click that
+      button and merge all the changes into the main branch.
+    \item
+      In order to get all the changes into your local, you'll need to do
+      \texttt{git\ checkout\ main} followed by \texttt{git\ pull}.
+      Again, this should be a \texttt{fast-forward} merge. See
+      \href{https://github.com/pommevilla/friendly-dollop/pull/2}{here}
+      for an example of someone following this workflow to submit
+      changes into my repo.
+    \end{itemize}
+  \end{enumerate}
+\end{enumerate}
+
+\end{document}
