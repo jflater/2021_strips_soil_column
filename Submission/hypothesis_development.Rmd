@@ -1,25 +1,27 @@
 ---
-title: Strips Soil Columns
+title: "Strips Soil Columns"
 output:
   html_document:
-    toc: true
-    toc_float: true
+    toc: yes
+    toc_float: yes
+  pdf_document:
+    toc: yes
 bibliography: references.bib
 ---
 
-# Hypothesis development
+# Hypotheses
 
 For Jared's first paper, there are three hypotheses:
 
-## H1
+H1
 
-*The composition of taxa (16S) and ARGs is different between bulk and rhizosphere soil following fertilizer or manure applications*
+*The composition of taxa (16S) and ARGs is different between bulk and rhizosphere soil following fertilizer and or manure applications*
 
-## H2
+H2
 
 *AD swine manure runoff induces smaller shifts in 16S and ARGs in soil when compared to M runoff, but both AD and M elicit greater responses than mineral runoff*
 
-## H3
+H3
 
 *With greater soil depth, there is less dissimilarity between bulk and rhizo 16S and ARG communities*
 
@@ -29,15 +31,59 @@ For Jared's first paper, there are three hypotheses:
 
 ## H1
 
+[**The composition of taxa (16S) and ARGs is different between bulk and rhizosphere soil following fertilizer and or manure applications**]{.ul}
+
 *Bulk vs. rhizosphere impact on SSU/ARGs*
 
 First, there is strong evidence for different bacterial community compositions between bulk and rhizosphere soils [@kuzyakov2015]. In prairies, similar differences between bulk and rhizosphere soils has been observed, however, it must be noted that restored prairies can take decades before soil microbiomes are "mature" [@allison2005].
 
-In general, bulk soil is more/less taxonomically diverse than rhizosphere soil and has lower/higher bacterial abundances. Fertilization and manure introduce nutrients and influence the abundance of ARGs. **In a pot study, manured soils had higher relative abundance of ARGs in bulk soil than in rhizosphere soil but the absolute abundance of ARGs (copies per gram of soil) was lower in bulk soil than most rhizosphere soils** [@song2020].
+-   What is known about the difference between rhizosphere and bulk:
+
+    -   Species/ARG abundance?
+
+        -   Rhizosphere more abundant bacterial biomass
+
+    -   Species/ARG diversity?
+
+        -   Rhizosphere less diverse in bacterial species
+
+    -   ARG mechanism?
+
+    -   Dominant phyla/ARGs?
 
 *Manure vs. fertilizer impact on SSU/ARGs*
 
-Inputs of nutrients into soil increase the bacterial biomass, inherently increasing the number of indigenous resistance genes. **To properly quantify the impact of manure, profiles of manure associated genes should be developed and screened for in soil and water samples.**
+Fertilization and manure introduce nutrients and influence the abundance of ARGs. **In a pot study, manured soils had higher relative abundance of ARGs in bulk soil than in rhizosphere soil but the absolute abundance of ARGs (copies per gram of soil) was lower in bulk soil than most rhizosphere soils** [@song2020].
+
+Inputs of nutrients into soil increase the bacterial biomass, inherently increasing the number of indigenous resistance genes by stimulating growth of the bacterial biomass.
+
+Bulk vs. Rhizo response to fertilizer is characterized by...
+
+With differences between fertilizer type characterized by...
+
+-   M and AD
+
+-   AD does this less than M
+
+-   
+
+## H2
+
+[**AD swine manure runoff induces smaller shifts in 16S and ARGs in soil when compared to M runoff, but both AD and M elicit greater responses than mineral runoff**]{.ul}
+
+## H3
+
+[**With greater soil depth, there is less dissimilarity between bulk and rhizo 16S and ARG communities**]{.ul}
+
+# What does it all mean?
+
+Our results will expand our understanding of the short term\* threat/impact of different types of fertilizers on the quality of water infiltrating through perennial rhizospheres. We will expand on the understanding of the differences between manure and anaerobically digested manure, a byproduct of an expanding bio gas industry.
+
+We will establish the differences between bulk and rhizosphere community and ARG response to manured runoff, contributing to our understanding of how prairie strips, a disproportionately beneficial and increasingly popular conservation practice, respond to manure runoff.
+
+Finally we will
+
+\* Short term: our soils come from strips with at least 10 years of no manure directly applied
 
 # Questions to answer
 
@@ -48,5 +94,6 @@ Inputs of nutrients into soil increase the bacterial biomass, inherently increas
 5.  What is the difference in ARG response between rhizosphere and bulk soil?
 6.  Is the response different based on treatment?
 7.  What are the differences in persistence of stimulated ARGs between bulk and rhizosphere communities?
+8.  What is the correlation between chloride concentration and ARG concentration in leachate? Is there a change in this relationship by column length?
 
 # Bibliography
